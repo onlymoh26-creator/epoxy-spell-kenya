@@ -3,3 +3,58 @@
 @media(max-width:900px){.site-header{padding:0 5%;height:74px}.main-nav{gap:17px}.hero-content{margin-left:7%;width:68%}.section{padding:78px 6%}.gallery-heading{padding:0 6%}.gallery-grid{padding:0 6%}.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.service-wide{grid-column:span 2}.trust-strip{padding:22px 4%}.trust-strip>div{padding:0 12px}.why-section{gap:6%}.quote-layout{gap:7%}.quote-form{padding:27px}}
 @media(max-width:650px){.announcement{font-size:8px;letter-spacing:.1em;height:28px}.site-header{height:70px}.brand-mark{height:38px;width:38px}.brand-name{font-size:12px}.brand-name small{font-size:7px}.menu-toggle{display:flex;flex-direction:column;gap:5px;padding:10px}.menu-toggle span{display:block;width:23px;height:2px;background:var(--gold)}.main-nav{display:none;position:absolute;top:70px;left:0;right:0;background:#151512;padding:18px 6% 25px;flex-direction:column;align-items:stretch;gap:0;border-top:1px solid #ffffff1c}.main-nav.open{display:flex}.main-nav>a{padding:13px 0;border-bottom:1px solid #ffffff15}.main-nav .nav-cta{padding:13px;margin-top:12px;text-align:center;border:0}.hero{min-height:650px;align-items:flex-end}.hero-image{inset:0;background-position:58% center;opacity:.65}.hero-shade{background:linear-gradient(0deg,#11110f 0%,rgba(17,17,15,.95) 20%,rgba(17,17,15,.45) 75%,rgba(17,17,15,.15) 100%)}.hero-content{width:auto;margin:0;padding:100px 7% 80px}.hero h1{font-size:clamp(43px,12vw,61px)}.hero-copy{font-size:13px;margin:20px 0 25px}.hero-actions{align-items:stretch;flex-direction:column;max-width:300px}.button{min-height:48px}.hero-footnote{margin-top:35px;font-size:8px}.hero-index{right:7%;bottom:22px}.trust-strip{grid-template-columns:1fr 1fr;padding:14px 5%;gap:0}.trust-strip>div{padding:13px 7px;border-bottom:1px solid var(--line)}.trust-strip>div:nth-child(2){border-right:0}.trust-strip>div:nth-child(3),.trust-strip>div:nth-child(4){border-bottom:0}.trust-strip b{font-size:11px}.trust-strip small{font-size:9px}.strip-icon{font-size:21px}.section{padding:64px 6%}.section-heading,.gallery-heading{display:block;margin-bottom:30px}.section-heading>p,.gallery-heading>p{margin-top:20px;font-size:12px}.section h2,.gallery-heading h2,.quote-intro h2{font-size:43px}.service-grid{grid-template-columns:1fr;gap:14px}.service-photo{height:210px}.service-content{padding:23px}.service-content p{min-height:0}.service-wide{grid-column:auto;display:block}.service-wide .service-photo{height:210px;min-height:0}.service-wide .service-content{padding:23px}.gallery-section{padding:65px 0 50px}.gallery-grid{padding:0 6%;grid-template-columns:1fr 1fr;grid-template-rows:190px 155px 155px;gap:9px}.gallery-large{grid-row:span 2}.gallery-item span{padding:25px 10px 10px;font-size:8px}.gallery-item span b{font-size:11px}.gallery-note{font-size:10px;line-height:1.7;margin:20px 6% 0}.why-section{grid-template-columns:1fr;gap:35px}.why-visual{min-height:340px;padding:15px}.why-visual-inner{min-height:310px;padding:20px}.why-visual-inner>span{font-size:34px}.why-copy>p:not(.eyebrow){font-size:12px}.quote-layout{grid-template-columns:1fr;gap:35px}.quote-intro{padding-top:0}.quote-intro>p:not(.eyebrow){margin:18px 0 25px}.quote-contact{margin-top:16px}.quote-form{padding:25px 20px}.form-row-split{grid-template-columns:1fr;gap:0}.site-footer{padding:30px 6% 18px}.footer-links{gap:16px}.footer-bottom{flex-direction:column;gap:7px}.floating-whatsapp{right:12px;bottom:12px;padding:11px 14px}.floating-whatsapp b{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
+/* FLOATING WHATSAPP BUTTON */
+.floating-whatsapp {
+  position: fixed;
+  right: 22px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.28);
+  z-index: 9999;
+  text-decoration: none;
+  animation: whatsapp-bounce 2s infinite;
+  transition: transform 0.2s ease;
+}
+
+.floating-whatsapp svg {
+  width: 32px;
+  height: 32px;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.08);
+}
+
+@keyframes whatsapp-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-9px);
+  }
+  60% {
+    transform: translateY(-4px);
+  }
+}
+
+@media (max-width: 600px) {
+  .floating-whatsapp {
+    right: 16px;
+    bottom: 18px;
+    width: 56px;
+    height: 56px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-whatsapp {
+    animation: none;
+  }
+}
